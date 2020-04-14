@@ -37,7 +37,7 @@ class User {
       WHERE id = $1`
   }
   static updatePassword() {
-
+    // This is immediately needed, Complete if needed, otherwise delete.
   }
 }
 
