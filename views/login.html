@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Log In</title>
+  </head>
+  <body>
+    <header>
+      <h1>Coffee Chat App</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/login">Don't have an account? Sign up here.</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <h1>Log into your account</h1>
+
+        <form id="loginForm" action="/login" method="post">
+            <fieldset>
+
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email">
+
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+
+                <input type="submit" value="Log In" />
+            </fieldset>
+        </form>
+
+
+    </main>
+
+  </body>
+</html>
