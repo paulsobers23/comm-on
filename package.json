@@ -1,0 +1,31 @@
+{
+  "name": "coffee-chat",
+  "version": "1.0.0",
+  "description": "The goal of this app is to allow two users to create accounts in categories and schedule coffee zoom chats and maybe more in the future",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulsobers23/coffee-chat.git"
+  },
+  "author": "Carmen, Peter, Paul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulsobers23/coffee-chat/issues"
+  },
+  "homepage": "https://github.com/paulsobers23/coffee-chat#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
