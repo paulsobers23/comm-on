@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <header>
+      <h1>Coffee Chat App</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/login">Already have an account? Login here.</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <h1>Sign up to create an account</h1>
+
+        <form id="registerForm" action="/register" method="post">
+            <fieldset>
+                <label for="first_name">First Name</label>
+                <input id="first_name" type="text" name="first_name">
+
+                <label for="last_name">Last Name</label>
+                <input id="last_name" type="text" name=last_name">
+
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email">
+
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+
+                <input type="submit" value="Sign Up" />
+            </fieldset>
+        </form>
+
+
+    </main>
+
+  </body>
+</html>
