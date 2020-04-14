@@ -1,12 +1,15 @@
 const db = require('../db');
+const bcrypt = require('bcrypt')
 
 class User {
   static addUser(first_name, last_name, email, password, industry, job_position, job_description, thumbs_up, Contact_info) {
     const queryText = `INSERT INTO users (first_name, last_name, email, password, industry, job_position, 
-        job_description, thumbs_up, Contact_info) VALUES ($1, $2, $3, $4, $5, $6, $7, $8. $9)`;
+        job_description, thumbs_up, Contact_info) VALUES ($1, $2, $3, $4, $5, $6, $7, $8. $9);`;
   }
-  static addConnection() {
-    const queryText = ``;
+  static addConnection(sender_id, reciever_id) {
+    const queryText = `INSERT INTO connections (sender_id, reciever_id, connected) VALUES ($1, $2);`;
+    return db.query(queryText, [sender_id, reciever_id])
+      .then(data => console.log('Connection has been added:', data));
   }
 
   static getByEmail(email) {
@@ -14,18 +17,18 @@ class User {
     return db.query(queryText, [email])
       .then((data) => data.rows[0]);
   }
+
   static getById(id) {
     const queryText = 'SELECT * FROM users WHERE id = $1;';
     return db.query(queryText, [email])
       .then((data) => data.rows[0]);
   }
+
   static getConnections(sender_id) {
     const queryText = `SELECT connections.reciever_id from connections WHERE conenctions.sender_id = $1 AND connected = TRUE`;
     return db.query(queryText, [sender_id])
       .then((data) => {
-        data.rows.forEach((reciever) => { // Your connections already stored in user obj.
-          getById(reciever)
-        });
+        data.rows.forEach((reciever) => User.getById(sender_id)); // Your connections already stored in user obj.
       });
   }
 
