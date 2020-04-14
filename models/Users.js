@@ -40,5 +40,5 @@ class User {
     // This is immediately needed, Complete if needed, otherwise delete.
   }
 }
-// D
+
 module.exports = User;
