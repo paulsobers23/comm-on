@@ -1,0 +1,11 @@
+form .field {
+	max-width: 800px;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
