@@ -13,31 +13,37 @@ const register = (req, res) => {
     .then(() => res.send('User successfully created'));
 };
 // need to fix login
-const login = (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
-  const user = User.getByEmail(email);
+  try {
+    const user = await User.getByEmail(email);
 
-  if (!user) {
-    return res.status(401).send('Unauthorized User');
-  }
+    if (!user) {
+      return res.status(401).send('User not found.');
+    }
+    const isValid = await bcrypt.compare(password, user.password);
 
-  const validPassword = bcrypt.compare(password, user.password);
+    if (!isValid) {
+      return res.send('Incorrect Password.');
+    }
 
-  if (validPassword) {
-    return jwt.sign({
-      email, password, userId: user.id, expiresIn: '3hr',
-    }, 'secret', (err, encryptedPayload) => {
+    const payload = { email, password, id: user.id };
+    return jwt.sign(payload, 'secret', (err, encryptedPayload) => {
       if (err) {
-        res.status(403).send('Unauthorized User');
+        console.log(err);
+        res.status(500).send(err);
       }
       console.log('JWT:', encryptedPayload);
-      res.cookie('userToken', encryptedPayload, { httpOnly: true }).send('Logged in');
+      res.cookie('userToken', encryptedPayload);
+      // redirect to event home page after
     });
+  } catch (err) {
+    console.log(err);
+    return res.send(err);
   }
-  // only here for testing
-  return res.status(500).send('Internal Server Error');
 };
+
 
 const authenticate = (req, res, next) => {
   if (!req.cookies.userToken) {
