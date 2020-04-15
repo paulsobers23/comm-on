@@ -2,9 +2,9 @@ const db = require('../db');
 const bcrypt = require('bcrypt')
 
 class User {
-  static addUser(first_name, last_name, email, password, industry, job_position, job_description, thumbs_up, Contact_info) {
+  static addUser(first_name, last_name, email, password, industry, job_position, job_description, thumbs_up, contact_info) {
     const queryText = `INSERT INTO users (first_name, last_name, email, password, industry, job_position, 
-        job_description, thumbs_up, Contact_info) VALUES ($1, $2, $3, $4, $5, $6, $7, $8. $9);`;
+        job_description, thumbs_up, contact_info) VALUES ($1, $2, $3, $4, $5, $6, $7, $8. $9);`;
   }
   static addConnection(sender_id, reciever_id) {
     const queryText = `INSERT INTO connections (sender_id, reciever_id, connected) VALUES ($1, $2);`;
@@ -32,8 +32,8 @@ class User {
       });
   }
 
-  static updateUser(id, first_name, last_name, email, industry, job_position, job_description, Contact_info) {
-    const queryText = `UPDATE users SET first_name = $2, last_name = $3, email = $4, industry = $4, job_position = $5, Contact_info = $6
+  static updateUser(id, first_name, last_name, email, industry, job_position, job_description, contact_info) {
+    const queryText = `UPDATE users SET first_name = $2, last_name = $3, email = $4, industry = $4, job_position = $5, contact_info = $6
       WHERE id = $1`
   }
   static updatePassword() {
