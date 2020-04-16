@@ -5,7 +5,8 @@ id SERIAL PRIMARY KEY,
 first_name TEXT,
 last_name TEXT,
 email TEXT UNIQUE,
-password TEXT
+password TEXT,
+phone_number TEXT
 );
 ​
 CREATE TABLE events (
@@ -25,3 +26,6 @@ CREATE TABLE rsvp (
   event_id INT REFERENCES events(id),
   user_id INT REFERENCES users(id)
 );
+
+
+INSERT INTO users (first_name, last_name, email, password, phone_number) VALUES ('Peter', 'Rose', 'peterrose@gmail.com', 'nicePassword', '347-555-8000');
