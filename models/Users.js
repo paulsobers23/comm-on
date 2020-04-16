@@ -10,7 +10,7 @@ class User {
   }
 
   static update(id, firstName, lastName, email, password, phoneNumber) {
-    const queryText = `UPDATE users SET first_name = $2, last_name = $3, email = $4, industry = $4, job_position = $5, Contact_info = $6
+    const queryText = `UPDATE users SET firstName = $2, lastName = $3, email = $4, password = $4, phoneNumber = $5
       WHERE id = $1;`
     return db.query(queryText, [id, firstName, lastName, email, password, phoneNumber])
       .then(data => 'User has been updated.', data);

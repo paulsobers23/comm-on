@@ -29,7 +29,7 @@ class Events {
     return db.query(queryText, [creatorId])
   }
 
-  static getLastByCreator( creatorId) {
+  static getLastByCreator(creatorId) {
     const queryText = `SELECT * FROM events WHERE id = $1`;
     return db.queryText(queryText, [creatorId])
       .then(data => data.rows[0]);
