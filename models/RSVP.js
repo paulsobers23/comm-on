@@ -16,8 +16,6 @@ class RSVP {
     const queryText = 'UPDATE rsvp SET event_id = $1, user_id = $2;';
     return db.query(queryText, [eventId, userId]);
   }
-
-
 }
 
 module.exports = RSVP;
