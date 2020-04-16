@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an event</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand ">
+            <a class="navbar-item" href="#">
+                <p id='nav-logo'>CafeChats</p>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <form id="eventForm" action="/events" method="POST">
+            <fieldset>
+                <label class="label" for="first_name">First Name</label>
+                <input id="first_name" class="input" type="text" placeholder="First Name" name="first_name">
+
+                <label class="label" for="last_name">Last Name</label>
+                <input id="last_name" class="input" type="text" placeholder="Last name" name=last_name">
+
+                <label class="label" for="email">Event Title</label>
+                <input id="email" class="input" type="text" placeholder="Email Adress" name="email">
+
+                <label class="label">E vent Description</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Textarea"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <input class="button is-link is-light" type="submit" value="Submit Event" />
+        </form>
+    </main>
+</body>
+</html>
