@@ -9,5 +9,3 @@ A full stack web application allowing apiring/junior level software engineers to
 * - ESLint
 * - 
 * [Features](#features)
-
-https://gist.github.com/PeterTheDeveloper/99c56ff60ca4a53c398eb7d2b69554cd
