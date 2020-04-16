@@ -15,9 +15,5 @@ router.get('/register', userController.registerForm);
 
 router.post('/register', userController.register);
 
-<<<<<<< HEAD
+module.exports = router;
 
-module.exports = router;
-=======
-module.exports = router;
->>>>>>> origin
