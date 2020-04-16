@@ -1,5 +1,4 @@
 const express = require('express');
-
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -15,5 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(router);
 
+<<<<<<< HEAD
 
 app.listen(port, host, () => console.log(`Server listnening on port ${port}...`));
+=======
+app.listen(port, () => console.log(`Server listnening on port ${port}...`));
+>>>>>>> origin
