@@ -4,25 +4,24 @@ const path = require('path');
 const User = require('../models/Users');
 
 const register = (req, res) => {
-  try{
-    
+  try {
     const {
       firstName, lastName, email, password,
     } = req.body;
-    console.log(firstName, lastName)
+    console.log(firstName, lastName);
     const saltRounds = 8;
     bcrypt.hash(password, saltRounds)
       .then((hashedPassword) => User.create(firstName, lastName, email, hashedPassword))
-      .then(() => res.send('User successfully created'));
-  }catch(err){
+      .then(() => res.redirect('/login'));
+  } catch (err) {
     console.log(err);
     res.status(500).send(err);
   }
- 
 };
-// need to fix login
+// need to reload feature if the user wasn't found
 const login = async (req, res) => {
   const { email, password } = req.body;
+  console.log(email, password);
 
   try {
     const user = await User.getByEmail(email);
@@ -36,7 +35,9 @@ const login = async (req, res) => {
       return res.send('Incorrect Password.');
     }
 
-    const payload = { email, password, id: user.id };
+    const payload = {
+      email, password, id: user.id, expiresIn: '2hr',
+    };
     return jwt.sign(payload, 'secret', (err, encryptedPayload) => {
       if (err) {
         console.log(err);
@@ -44,34 +45,43 @@ const login = async (req, res) => {
       }
       console.log('JWT:', encryptedPayload);
       res.cookie('userToken', encryptedPayload);
-      // redirect to event home page after
+      res.redirect('/home');
     });
+  } catch (err) {
+    console.log(err);
+    return res.send(err);
+  };
+};
+
+
+const authenticate = async (req, res, next) => {
+  if (!req.cookies.userToken) {
+    // res.status(401);
+    return res.redirect('/login');
+  }
+  try {
+    const payload = jwt.verify(req.cookies.userToken, 'secret');
+    console.log('Payload:', payload);
+    const { email, password } = payload;
+    const user = await User.getByEmail(email);
+    if (!user) {
+      return res.status(401).send('Unauthorized User');
+    }
+
+    if (password === user.password) {
+      console.log('cookie verified');
+      return next();
+    }
+    return res.status(403).send('Unauthorized User')
   } catch (err) {
     console.log(err);
     return res.send(err);
   }
 };
 
-
-const authenticate = (req, res, next) => {
-  if (!req.cookies.userToken) {
-    res.status(401).send('Unauthorized User');
-    return res.redirect('/login');
-  }
-  const payload = jwt.verify(req.cookies.userToken, 'secret');
-  console.log('Payload:', payload);
-  const { email, password } = payload;
-
-  const user = User.getByEmail(email);
-  if (!user) {
-    return res.status(401).send('Unauthorized User');
-  }
-
-  if (password === user.password) {
-    console.log('cookie verified');
-    return next();
-  }
-  return res.status(500).send('Internal Server');
+const logout = (req, res) => {
+  req.clearCookie('userToken');
+  res.redirect('/login');
 };
 
 const loginForm = (req, res) => {
@@ -84,6 +94,7 @@ const registerForm = (req, res) => {
 
 module.exports = {
   login,
+  logout,
   register,
   loginForm,
   registerForm,

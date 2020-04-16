@@ -12,16 +12,14 @@
 <body>
 
   <main>
-    <a href="/login">Don't have an account? Sign up here.</a>
+    <a href="/login">Already have an account? Log in.</a>
 
-    <h1>Log into your account</h1>
-
-    <form id="loginForm" action="/login" method="post">
+    <form id="registerForm" action="/register" method="post">
 
       <section class="field">
-        <label class="label" for="first_name">First Name</label>
+        <label class="label" for="firstName">First Name</label>
         <section class="control has-icons-left has-icons-right">
-          <input id="first_name" class="input" type="text" placeholder="Text input">
+          <input id="firstName" name ="firstName" class="input" type="text" placeholder="Text input" >
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
@@ -29,9 +27,9 @@
       </section>
 
       <section class="field">
-        <label for="last_name" class="label">Last Name</label>
+        <label for="lastName" class="label">Last Name</label>
         <section class="control has-icons-left has-icons-right">
-          <input id="last_name" class="input" type="text" placeholder="Text input">
+          <input id="lastName" name ="lastName" class="input" type="text" placeholder="Text input">
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
@@ -41,7 +39,7 @@
       <section class="field">
         <label for="email" class="label">Email</label>
         <section class="control has-icons-left has-icons-right">
-          <input id="email" class="input" type="email" placeholder="Email input" >
+          <input id="email" name="email" class="input" type="email" placeholder="Email input" >
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>

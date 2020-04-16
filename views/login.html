@@ -12,36 +12,16 @@
 <body>
 
   <main>
-    <a href="/login">Don't have an account? Sign up here.</a>
+    <a href="/register">Don't have an account? Sign up here.</a>
 
     <h1>Log into your account</h1>
 
     <form id="loginForm" action="/login" method="post">
-
-      <section class="field">
-        <label class="label" for="first_name">First Name</label>
-        <section class="control has-icons-left has-icons-right">
-          <input id="first_name" class="input" type="text" placeholder="Text input">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-        </section>
-      </section>
-
-      <section class="field">
-        <label for="last_name" class="label">Last Name</label>
-        <section class="control has-icons-left has-icons-right">
-          <input id="last_name" class="input" type="text" placeholder="Text input">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-        </section>
-      </section>
-
+      
       <section class="field">
         <label for="email" class="label">Email</label>
         <section class="control has-icons-left has-icons-right">
-          <input id="email" class="input" type="email" placeholder="Email input" >
+          <input id="email" name="email" class="input" type="email" placeholder="Email input" >
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
