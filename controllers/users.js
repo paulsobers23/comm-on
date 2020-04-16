@@ -4,13 +4,21 @@ const path = require('path');
 const User = require('../models/Users');
 
 const register = (req, res) => {
-  const {
-    firstName, lastName, email, password,
-  } = req.body;
-  const saltRounds = 8;
-  bcrypt.hash(password, saltRounds)
-    .then((hashedPassword) => User.create(firstName, lastName, email, hashedPassword))
-    .then(() => res.send('User successfully created'));
+  try{
+    
+    const {
+      firstName, lastName, email, password,
+    } = req.body;
+    console.log(firstName, lastName)
+    const saltRounds = 8;
+    bcrypt.hash(password, saltRounds)
+      .then((hashedPassword) => User.create(firstName, lastName, email, hashedPassword))
+      .then(() => res.send('User successfully created'));
+  }catch(err){
+    console.log(err);
+    res.status(500).send(err);
+  }
+ 
 };
 // need to fix login
 const login = async (req, res) => {
@@ -79,4 +87,5 @@ module.exports = {
   register,
   loginForm,
   registerForm,
+  authenticate,
 };

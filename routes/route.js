@@ -15,5 +15,16 @@ router.get('/register', userController.registerForm);
 
 router.post('/register', userController.register);
 
+router.use(userController.authenticate);
+
+//Responsible for showing all events created by a user
+// router.get('/events', eventController.getByCreator);
+
+// router.post('/events', eventController.create);
+
+// router.put('/events/:id', eventController.update);
+
+// router.delete('/events/:id', eventController.delete);
+
 module.exports = router;
 
