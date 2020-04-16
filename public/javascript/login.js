@@ -6,7 +6,6 @@ loginForm.addEventListner('submit', e => {
   const email = loginForm.email.value;
   const password = loginForm.password.value;
 
-  const errorText = document.getElementById('errorText');
   fetch('/login', {
     method: 'POST',
     headers: {
@@ -23,7 +22,6 @@ loginForm.addEventListner('submit', e => {
       }
     })
     .catch(err => {
-      errorText.innerText = 'Please try again!';
       window.setTimeout(() => {
         window.location.reload();
       }, 4 * 1000);
