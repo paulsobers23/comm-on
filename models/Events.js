@@ -52,6 +52,11 @@ class Events {
     const queryText = 'SELECT * FROM events WHERE creator = $1;';
     return db.query(queryText, [creatorId]);
   }
+  
+  static getAll(){
+    const queryText = 'SELECT * FROM events;';
+    return db.query(queryText);
+  }
 
   static getLastByCreator(creatorId) {
     const queryText = 'SELECT * FROM events ORDER BY id DESC LIMIT 1;';
