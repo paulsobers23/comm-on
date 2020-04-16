@@ -2,7 +2,7 @@
   "name": "coffee-chat",
   "version": "1.0.0",
   "description": "The goal of this app is to allow two users to create accounts in categories and schedule coffee zoom chats and maybe more in the future",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +27,7 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.20.2",
+    "nodemon": "^2.0.3"
   }
 }

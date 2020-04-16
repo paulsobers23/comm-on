@@ -23,7 +23,7 @@ class Events {
     const queryText = `SELECT * FROM events WHERE id = $1`;
     return db.query(queryText, [eventId])
   }
-
+  
   static getByCreator(creatorId) {
     const queryText = `SELECT * FROM events WHERE id = $1`;
     return db.query(queryText, [creatorId])
@@ -47,5 +47,9 @@ class Events {
       .then(data => data.rows[0]);
   }
 };
+
+
+const peter = new User('peter', 'rose', 'peterrosejr@gmail.com', 'nicePassword', '347-555-6107');
+console.log(peter.create('Peter', '11-02-2020','sample event', 'to test', 'New York', '09-12-2021', 'virtual'));
 
 module.exports = Events;
