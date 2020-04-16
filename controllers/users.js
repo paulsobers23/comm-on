@@ -72,7 +72,7 @@ const authenticate = async (req, res, next) => {
       console.log('cookie verified');
       return next();
     }
-    return res.status(403).send('Unauthorized User')
+    // return res.status(403).send('Unauthorized User')
   } catch (err) {
     console.log(err);
     return res.send(err);
