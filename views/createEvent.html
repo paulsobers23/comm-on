@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create an event</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <style>
-        body {
-            padding: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <title>Create an event</title>
 </head>
-<body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand ">
-            <a class="navbar-item" href="#">
-                <p id='nav-logo'>CafeChats</p>
-            </a>
+<body id="creatEventBody">
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-    </nav>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <section class="navbar-brand ">
+      <a class="navbar-item" href="#">
+        <p id='nav-logo'>CafeChats</p>
+      </a>
 
-    <main>
-        <form id="eventForm" action="/events" method="POST">
-            <fieldset>
-                <label class="label" for="firstName">First Name</label>
-                <input id="firstName" class="input" type="text" placeholder="First Name" name="firstName">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </section>
+  </nav>
 
-                <label class="label" for="lastName">Last Name</label>
-                <input id="lastName" class="input" type="text" placeholder="Last name" name="lastName">
+  <main>
+    <form id="eventForm" action="/events" method="POST">
+      <fieldset>
+        <label class="label" for="firstName">First Name</label>
+        <input id="firstName" class="input" type="text" placeholder="First Name" name="firstName">
 
-                <label class="label" for="email">Event Title</label>
-                <input id="email" class="input" type="text" placeholder="Email Adress" name="email">
+        <label class="label" for="lastName">Last Name</label>
+        <input id="lastName" class="input" type="text" placeholder="Last name" name="lastName">
 
-                <input type="date" id="date" name="event-start"
-                value="2020-04-15"
-                min="2020-04-15" max="2025-12-31">
+        <label class="label" for="email">Event Title</label>
+        <input id="email" class="input" type="text" placeholder="Email Adress" name="email">
 
-                <label class="label">Event Description</label>
-                <div class="control">
-                  <textarea class="textarea" placeholder="Textarea"></textarea>
-                </div>
-            </fieldset>
+        <input type="date" id="date" name="event-start" value="2020-04-15" min="2020-04-15" max="2025-12-31">
 
-            <input class="button is-link is-light" type="submit" value="Submit Event" />
-        </form>
-    </main>
+        <label class="label">Event Description</label>
+        <section class="control">
+          <textarea class="textarea" placeholder="Textarea"></textarea>
+        </section>
+      </fieldset>
+
+      <input class="button is-link is-light" type="submit" value="Submit Event" />
+    </form>
+  </main>
 </body>
+
 </html>
