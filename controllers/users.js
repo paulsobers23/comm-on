@@ -36,7 +36,7 @@ const login = async (req, res) => {
     }
 
     const payload = {
-      email, password, id: user.id, expiresIn: '2hr',
+      email, password, userId: user.id, expiresIn: '2hr',
     };
     return jwt.sign(payload, 'secret', (err, encryptedPayload) => {
       if (err) {
