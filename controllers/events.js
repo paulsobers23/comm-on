@@ -15,7 +15,7 @@ const create = (req, res) => {
   } = req.body;
   console.log(creator);
   Events.create(creator, dateCreated, title, description, purpose, location, dateTime, type)
-    .then((data) =>{
+    .then((data) => {
       console.log(data.rows);
       return res.status(201).json(data.rows);
     })
@@ -67,7 +67,7 @@ const createRSVPs = (req, res) => {
     });
 };
 
-const getRSVPs = (req,res) => {
+const getRSVPs = (req, res) => {
   const { eventId } = req.params;
   Events.getRSVPs(eventId)
     .then((data) => res.status(200).json(data.rows[0]))

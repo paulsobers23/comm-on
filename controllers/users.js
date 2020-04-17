@@ -92,6 +92,10 @@ const registerForm = (req, res) => {
   res.sendFile(path.join(__dirname, '../views', 'register.html'));
 };
 
+const homePage = (req,res) => {
+  res.sendFile(path.join(__dirname, '../views', 'home.html'));
+}
+
 module.exports = {
   login,
   logout,
@@ -99,4 +103,5 @@ module.exports = {
   loginForm,
   registerForm,
   authenticate,
+  homePage,
 };
