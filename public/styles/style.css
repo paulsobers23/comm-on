@@ -1,3 +1,4 @@
+/* login and register html */
 form .field {
 	max-width: 800px;
 }
@@ -8,4 +9,24 @@ body{
   align-items: center;
   text-align: center;
 
+}
+/* create event html */
+#creatEventBody {
+  padding: 20px;
+}
+
+/* home.html */
+#homeBody {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+    max-width: 60%;
+}
+.rsvp {
+    /* background-color: #42cfb0; */
 }
