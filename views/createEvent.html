@@ -13,7 +13,7 @@
 
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <section class="navbar-brand ">
-      <a class="navbar-item" href="#">
+      <a class="navbar-item" href="/home">
         <p id='nav-logo'>CafeChats</p>
       </a>
 
@@ -28,26 +28,57 @@
   <main>
     <form id="updateEvent" action="/events" method="PUT">
       <fieldset>
-        <label class="label" for="firstName">First Name</label>
-        <input id="firstName" class="input" type="text" placeholder="First Name" name="firstName">
+        <label class="label" for="eventTitle">Event Title</label>
+        <input id="eventTitle" class="input" type="text" placeholder="Title" name="eventTitle">
 
-        <label class="label" for="lastName">Last Name</label>
-        <input id="lastName" class="input" type="text" placeholder="Last name" name="lastName">
-
-        <label class="label" for="email">Event Title</label>
-        <input id="email" class="input" type="text" placeholder="Email Adress" name="email">
-
+        <label class="label" for="date">Event Date</label>
         <input type="date" id="date" name="event-start" value="2020-04-15" min="2020-04-15" max="2025-12-31">
 
-        <label class="label">Event Description</label>
+        <label class="label" for="purpose">Purpose of Event</label>
         <section class="control">
-          <textarea class="textarea" placeholder="Textarea"></textarea>
+          <section id="purpose" class="select">
+            <select>
+              <option>Art</option>
+              <option>Community Service</option>
+              <option>Education</option>
+              <option>Entertainment</option>
+              <option>Food</option>
+              <option>Music</option>
+              <option>Tech</option>
+              <option>Other</option>
+
+            </select>
+          </section>
         </section>
+
+        <section class="field">
+          <label class="label" for="location">Location</label>
+          <section class="control">
+            <input id="location" name="location" type="text" placeholder="Location" class="input">
+          </section>
+        </section>
+
+        <label class="label" for="eventDescription">Event Description</label>
+        <section class="control">
+          <textarea id="eventDescription" name="eventDescription" class="textarea" placeholder="Describe what the purpose of your event is!"></textarea>
+        </section>
+
+        <label class="label" for="eventType">Event Type</label>
+        <section class="control">
+          <section id="eventType" class="select">
+            <select>
+              <option>In Person</option>
+              <option>Remote/Virtual</option>
+            </select>
+          </section>
+        </section>
+
       </fieldset>
 
       <input class="button is-link is-light" type="submit" value="Submit Event" />
     </form>
   </main>
+  <script src="javascript/createEvent.js" charset="utf-8"></script>
 </body>
 
 </html>
