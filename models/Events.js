@@ -12,7 +12,7 @@ class Events {
     type,
   ) {
     const queryText = `INSERT INTO events (creator, date_created, title, description, purpose, location, date_time, type)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8);`;
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *; `;
     return db.query(queryText, [
       creator,
       dateCreated,
@@ -31,7 +31,7 @@ class Events {
   }
 
   static update(id, title, description, purpose, location, dateTime, type) {
-    const queryText = 'UPDATE events SET title = $2, description = $3, purpose = $4, location = $5, date_time = $6, type = $7 WHERE id = $1;';
+    const queryText = 'UPDATE events SET title = $2, description = $3, purpose = $4, location = $5, date_time = $6, type = $7 WHERE id = $1 RETURNING *; ';
     return db.query(queryText, [
       id,
       title,
@@ -64,8 +64,8 @@ class Events {
   }
 
   static getRSVPs(eventId) {
-    const queryText = 'SELECT * FROM users FULL JOIN rsvp ON users.id = rsvp.user_id WHERE rsvp.event_id = $1;';
-    return db.query(queryText, [eventId]).then((data) => data.rows);
+    const queryText = 'SELECT * FROM users FULL JOIN rsvp ON users.id = rsvp.user_id WHERE rsvp.event_id = $1; ';
+    return db.query(queryText, [eventId]);
   }
 }
 
