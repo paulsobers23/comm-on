@@ -13,6 +13,8 @@ const router = require('./routes/route');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(express.static('public'));
+
 app.use(router);
 
 app.listen(port, host, () => console.log(`Server listnening on port ${port}...`));
