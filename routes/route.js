@@ -10,9 +10,6 @@ router.get('/', (req,res) =>{
   res.send('hello nagivate to url until further notice');
 });
 // need to move late
-router.get('/home', (req,res) => {
-  res.send('event page waiting to be loaded ...');
-});
 
 router.use(cookieParser());
 
@@ -24,7 +21,9 @@ router.get('/login', userController.loginForm);
 
 router.post('/login', userController.login);
 
-router.use(userController.authenticate);
+// router.use(userController.authenticate);
+
+router.get('/home', userController.homePage);
 
 //Responsible for showing all events created by a user
 router.get('/events', eventController.getAll);

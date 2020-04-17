@@ -16,8 +16,6 @@ window.addEventListener('load', async() => {
           <p class="card-header-title">
             ${event.title}
           </p>
-          <a href="#" class="card-header-icon" aria-label="more options">
-            <span class="icon">
               <i class="fas fa-angle-down" aria-hidden="true"></i>
             </span>
           </a>
@@ -25,7 +23,6 @@ window.addEventListener('load', async() => {
         <section class="card-content">
           <section class="content">
             ${event.description}
-            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
             <br>
             <time datetime="2016-1-1">${event.date_time}</time>
           </section>
