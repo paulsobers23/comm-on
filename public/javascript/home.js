@@ -37,6 +37,7 @@ const getEvents = async () => {
         <footer class="card-footer">
             <a href="#" class="card-footer-item" onclick=RSVPEvent(${event.id})}>RSVP</a>
             <button onClick="updateEvent(${event.id})" id ="updateEvent" class="card-footer-item">Update Button</button>
+            <button onClick="removeEvent(${event.id})">Delete Event</button>
         </footer>
       </section>`;
   });
