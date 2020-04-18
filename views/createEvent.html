@@ -10,20 +10,43 @@
 </head>
 
 <body id="creatEventBody">
-
+  <!-- START NAV -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
-    <section class="navbar-brand ">
-      <a class="navbar-item" href="/home">
-        <p id='nav-logo'>CafeChats</p>
-      </a>
+    <section class="container">
 
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+      <section class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <p id='nav-logo'>COMM ON</p>
+        </a>
+        <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </span>
+      </section>
+
+      <section id="navbarMenu" class="navbar-menu">
+        <section class="navbar-end">
+          <a class="navbar-item" href="/home">
+            <p id='nav-logo'>Events</p>
+          </a>
+          <a class="navbar-item" href="/events">
+            <p id='nav-logo'>My Events</p>
+          </a>
+          <a class="navbar-item" href="/">
+            <p id='nav-logo'>My RSVPs</p>
+          </a>
+          <a class="navbar-item" href="/login">
+            <p id='nav-logo'>Login</p>
+          </a>
+          <a class="navbar-item" href="/register">
+            <p id='nav-logo'>Sign Up</p>
+          </a>
+        </section>
+      </section>
     </section>
   </nav>
+  <!-- END NAV -->
 
   <main>
     <form id="createEvent" action="#" method="#">

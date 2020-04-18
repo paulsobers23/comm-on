@@ -10,52 +10,53 @@
 </head>
 
 <body id="homeBody">
+  <!-- START NAV -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
-    <section class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <p id='nav-logo'>CafeChats</p>
-  
-      </a>
-      <a class="navbar-item" href="/createEvent">
-        <p id='nav-logo'>Create Event</p>
-      </a>
+    <section class="container">
 
-
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </section>
-  </nav>
-  <section id="eventsSection">
-    <section class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          Lunch with the marcy lab fellows.
-        </p>
-        <a href="#" class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
+      <section class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <p id='nav-logo'>COMM ON</p>
         </a>
-      </header>
-      <section class="card-content">
-        <section class="content">
-          We chillin in the lounge
-          <a href="/">@Everyone</a>
-          <br>
-          <time datetime="2016-1-1"></time>
+        <a class="navbar-item" href="/createEvent">
+          <p id='nav-logo'>Create Event</p>
+        </a>
+        <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </span>
+      </section>
+
+      <section id="navbarMenu" class="navbar-menu">
+        <section class="navbar-end">
+          <a class="navbar-item" href="/home">
+            <p id='nav-logo'>Events</p>
+          </a>
+          <a class="navbar-item" href="/events">
+            <p id='nav-logo'>My Events</p>
+          </a>
+          <a class="navbar-item" href="/">
+            <p id='nav-logo'>My RSVPs</p>
+          </a>
+          <a class="navbar-item" href="/login">
+            <p id='nav-logo'>Login</p>
+          </a>
+          <a class="navbar-item" href="/register">
+            <p id='nav-logo'>Sign Up</p>
+          </a>
         </section>
       </section>
     </section>
-    <footer class="card-footer">
-      <a href="#" class="card-footer-item rsvp">RSVP</a>
-      <a href="#" class="card-footer-item">View More</a>
-    </footer>
+  </nav>
+  <!-- END NAV -->
+
+  <section id="eventsSection">
+
   </section>
 
   <script src="./javascript/home.js"></script>
 </body>
 
 </html>
+
