@@ -24,7 +24,7 @@ router.post('/login', userController.login);
 // router.use(userController.authenticate);
 
 router.get('/home', userController.homePage);
-
+router.get('/createEvent', userController.createForm);
 //Responsible for showing all events created by a user
 router.get('/events', eventController.getAll);
 
