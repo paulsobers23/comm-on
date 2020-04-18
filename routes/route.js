@@ -24,7 +24,7 @@ router.post('/login', userController.login);
 // router.use(userController.authenticate);
 
 router.get('/home', userController.homePage);
-
+router.get('/createEvent', userController.createForm);
 //Responsible for showing all events created by a user
 router.get('/events', eventController.getAll);
 
@@ -42,12 +42,6 @@ router.get('/events/:eventId/rsvps', eventController.getRSVPs);
 
 // Resposible for creating RSVPS for an event
 router.post('/rsvps', eventController.createRSVPs);
-
-// need to be added for all users
-// router.get('user/:userId', userController.getAll)
-
-//
-
 
 module.exports = router;
 

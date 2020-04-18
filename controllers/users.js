@@ -96,6 +96,14 @@ const homePage = (req,res) => {
   res.sendFile(path.join(__dirname, '../views', 'home.html'));
 }
 
+const createForm = (req,res) => {
+  res.sendFile(path.join(__dirname, '../views', 'createEvent.html'));
+}
+
+const updateForm = (req,res) => {
+  res.sendFile(path.join(__dirname, '../views', 'updateEvent.html'));
+}
+
 module.exports = {
   login,
   logout,
@@ -104,4 +112,6 @@ module.exports = {
   registerForm,
   authenticate,
   homePage,
+  createForm,
+  updateForm,
 };
