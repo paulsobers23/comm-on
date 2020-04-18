@@ -18,16 +18,13 @@ const form = document.getElementById('createEvent');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const eventTitle = form.title.value;
-  const eventDate = form.dateCreated.value;
+  const title = form.title.value;
+  const dateCreated = form.dateCreated.value;
   const purpose = form.purpose.value;
   const location = form.location.value;
-  const eventDescription = form.description.value;
-  const eventType = form.type.value;
-  
-  console.log(eventTitle,eventDate,purpose,location,eventDescription,eventType);
-  console.log(document.cookie);
+  const description = form.description.value;
+  const type = form.type.value;
   const response = requestMethod('POST', '/events',
-  {null,dateCreated, eventTitle, description, purpose, location,eventDescription,eventType});
-  // window.location.href = '/home';
+  {dateCreated,title, description, purpose, location,type});
+  window.location.href = '/home';
 });

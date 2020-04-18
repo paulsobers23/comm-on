@@ -29,7 +29,7 @@
     <form id="createEvent" action="#" method="#">
       <fieldset>
         <label class="label" for="title">Event Title</label>
-        <input id="eventTitle" class="input" type="text" placeholder="title" name="title">
+        <input name="title" id="eventTitle" class="input" type="text" placeholder="title" >
 
         <label class="label" for="date">Event Date</label>
         <input type="datetime-local" id="date" name="dateCreated" value="2020-04-15" min="2020-04-15" max="2025-12-31">
@@ -65,8 +65,8 @@
 
         <label class="label" for="type">Event Type</label>
         <section class="control">
-          <section id="type" name="type" class="select">
-            <select>
+          <section id="type" class="select">
+            <select name="type">
               <option>In Person</option>
               <option>Remote/Virtual</option>
             </select>

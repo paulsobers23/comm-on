@@ -43,11 +43,5 @@ router.get('/events/:eventId/rsvps', eventController.getRSVPs);
 // Resposible for creating RSVPS for an event
 router.post('/rsvps', eventController.createRSVPs);
 
-// need to be added for all users
-// router.get('user/:userId', userController.getAll)
-
-//
-
-
 module.exports = router;
 
