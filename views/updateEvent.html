@@ -26,17 +26,16 @@
   </nav>
 
   <main>
-    <form id="updateEventForm" action="" method="">
+    <form id="updateEventForm" action="events" method="PUT">
       <fieldset>
-        <label class="label" for="eventTitle">Event Title</label>
-        <input id="eventTitle" class="input" type="text" placeholder="Title" name="eventTitle">
-
+        <label class="label" for="title">Event Title</label>
+        <input id="title" class="input" type="text" placeholder="Title" name="title">
         <label class="label" for="date">Event Date</label>
         <input type="date" id="date" name="dateCreated" value="2020-04-15" min="2020-04-15" max="2025-12-31">
-
+        
         <label class="label" for="purpose">Purpose of Event</label>
         <section class="control">
-          <section id="purpose" class="select">
+          <section id="purpose" name="purpose" class="select">
             <select>
               <option>Art</option>
               <option>Community Service</option>
@@ -58,15 +57,16 @@
           </section>
         </section>
 
-        <label class="label" for="eventDescription">Event Description</label>
+        <label class="label" for="description">Event Description</label>
         <section class="control">
-          <textarea id="eventDescription" name="description" class="textarea" placeholder="Describe what the purpose of your event is!"></textarea>
+
+          <textarea id="description" name="description" class="textarea" placeholder="Describe what the purpose of your event is!"></textarea>
         </section>
 
-        <label class="label" for="eventType">Event Type</label>
+        <label class="label" for="type">Event Type</label>
         <section class="control">
-          <section id="eventType" class="select">
-            <select name= "type">
+          <section id="type" name="type" class="select">
+            <select>
               <option>In Person</option>
               <option>Remote/Virtual</option>
             </select>
