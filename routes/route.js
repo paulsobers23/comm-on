@@ -25,6 +25,8 @@ router.post('/login', userController.login);
 
 router.get('/home', userController.homePage);
 router.get('/createEvent', userController.createForm);
+router.get('/updateEvent', userController.updateForm);
+
 //Responsible for showing all events created by a user
 router.get('/events', eventController.getAll);
 
@@ -32,7 +34,7 @@ router.get('/events', eventController.getAll);
 router.post('/events', eventController.create);
 
 //Responsible for updating an event
-router.put('/events/:id', eventController.update);
+router.post('/events/:id', eventController.update);
 
 //Responsible for deleting an event
 router.delete('/events/:id', eventController.remove);
