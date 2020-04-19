@@ -8,7 +8,6 @@ const register = (req, res) => {
     const {
       firstName, lastName, email, password,
     } = req.body;
-    console.log(firstName, lastName);
     const saltRounds = 8;
     bcrypt.hash(password, saltRounds)
       .then((hashedPassword) => User.create(firstName, lastName, email, hashedPassword))
@@ -21,7 +20,6 @@ const register = (req, res) => {
 // need to reload feature if the user wasn't found
 const login = async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
 
   try {
     const user = await User.getByEmail(email);
@@ -43,7 +41,6 @@ const login = async (req, res) => {
         console.log(err);
         res.status(500).send(err);
       }
-      console.log('JWT:', encryptedPayload);
       res.cookie('userToken', encryptedPayload);
       res.redirect('/home');
     });
@@ -60,19 +57,22 @@ const authenticate = async (req, res, next) => {
     return res.redirect('/login');
   }
   try {
-    const payload = jwt.verify(req.cookies.userToken, 'secret');
-    console.log('Payload:', payload);
+    const payload = await jwt.verify(req.cookies.userToken, 'secret');
     const { email, password } = payload;
     const user = await User.getByEmail(email);
     if (!user) {
       return res.status(401).send('Unauthorized User');
     }
+    
+    req.userId = user.user_id;
+    req.user = user;
+    
+    const isVaildPassword = await bcrypt.compare(password, user.password)
 
-    if (password === user.password) {
-      console.log('cookie verified');
+    if (isVaildPassword) {
       return next();
     }
-    // return res.status(403).send('Unauthorized User')
+    return res.status(403).send('Unauthorized User')
   } catch (err) {
     console.log(err);
     return res.send(err);
@@ -94,16 +94,19 @@ const registerForm = (req, res) => {
 
 const homePage = (req,res) => {
   res.sendFile(path.join(__dirname, '../views', 'home.html'));
-}
+};
 
 const createForm = (req,res) => {
   res.sendFile(path.join(__dirname, '../views', 'createEvent.html'));
-}
+};
 
 const updateForm = (req,res) => {
   res.sendFile(path.join(__dirname, '../views', 'updateEvent.html'));
-}
+};
 
+const landingPage = (req,res) =>{
+  res.sendFile(path.join(__dirname, '../views', 'landing.html'));
+}
 module.exports = {
   login,
   logout,
@@ -114,4 +117,5 @@ module.exports = {
   homePage,
   createForm,
   updateForm,
+  landingPage,
 };

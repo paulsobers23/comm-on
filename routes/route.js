@@ -7,11 +7,6 @@ const cookieParser = require('cookie-parser');
 
 const router = express.Router();
 
-router.get('/', (req,res) =>{
-  res.sendFile(path.join(__dirname, '../views', 'landing.html'));
-});
-// need to move late
-
 router.use(cookieParser());
 
 router.get('/register', userController.registerForm);
@@ -22,7 +17,9 @@ router.get('/login', userController.loginForm);
 
 router.post('/login', userController.login);
 
-// router.use(userController.authenticate);
+router.use(userController.authenticate);
+
+router.get('/', userController.landingPage);
 
 router.get('/home', userController.homePage);
 router.get('/createEvent', userController.createForm);

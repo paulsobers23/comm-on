@@ -17,7 +17,8 @@ const getEvents = async () => {
   const response = await requestMethod('GET', '/events')
   const data = await response.json();
   const events = data.forEach((event) =>{
-    document.getElementById('eventsSection').innerHTML += `
+  const section =  document.getElementById('eventsSection');
+  section.innerHTML += `
           <section class="card">
         <header class="card-header">
           <p class="card-header-title">
@@ -32,6 +33,7 @@ const getEvents = async () => {
             ${event.description}
             <br>
             <time datetime="2016-1-1">${new Date(event.date_time)}</time>
+            <p></p>
           </section>
         </section>
         <footer class="card-footer">
@@ -52,7 +54,7 @@ const updateEvent = (id) => {
     form.addEventListener('submit', async(e) => {
       e.preventDefault();
       const title = form.title.value;
-      const dateCreated = form.dateCreated.value;
+      const date_time = form.date_time.value;
       const purpose = form.purpose.value;
       const location = form.location.value;
       const description = form.description.value;
@@ -64,8 +66,8 @@ const updateEvent = (id) => {
       const creatorId = data.creator;
       console.log(creatorId);
       
-      const response = requestMethod('POST', '/events/:id',
-      {creatorId,dateCreated,title, description, purpose, location,type});
+      // const response = requestMethod('POST', '/events/:id',
+      // {creatorId,dateCreated,title, description, purpose, location,type});
       // window.location.href = '/home';
       
     });

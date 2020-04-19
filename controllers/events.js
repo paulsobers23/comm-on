@@ -1,7 +1,6 @@
 const Events = require('../models/Events');
 const RSVPs = require('../models/RSVP');
 
-// need to send back the event just created, currently sending back an empty array but create the event in the database.
 const create = (req, res) => {
   const {
     creator,
