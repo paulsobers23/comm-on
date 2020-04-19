@@ -1,13 +1,14 @@
 const express = require('express');
 const userController = require('../controllers/users');
 const eventController = require('../controllers/events');
+const path = require('path');
 
 const cookieParser = require('cookie-parser');
 
 const router = express.Router();
-// need to remove before production
+
 router.get('/', (req,res) =>{
-  res.send('hello nagivate to url until further notice');
+  res.sendFile(path.join(__dirname, '../views', 'landing.html'));
 });
 // need to move late
 
@@ -46,4 +47,3 @@ router.get('/events/:eventId/rsvps', eventController.getRSVPs);
 router.post('/rsvps', eventController.createRSVPs);
 
 module.exports = router;
-

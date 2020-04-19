@@ -4,55 +4,88 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-  <link rel="stylesheet" href="styles/style.css">
-  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Log In</title>
 </head>
 
 <body>
-
-  <main>
-    <a href="/register">Don't have an account? Sign up here.</a>
-
-    <h1>Log into your account</h1>
-
-    <form id="loginForm" action="/login" method="post">
-
-      <section class="field">
-        <label for="email" class="label">Email</label>
-        <section class="control has-icons-left has-icons-right">
-          <input id="email" class="input" type="email" placeholder="Email input" name="email">
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-        </section>
+  <!-- START NAV -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <section class="container">
+      <section class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <p id='nav-logo'>COMM ON</p>
+        </a>
+        <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </span>
       </section>
 
-      <section class="field">
-        <label for="password" class="label">Password</label>
-        <section class="control has-icons-left has-icons-right">
-          <input id="password" class="input" type="password" name="password">
-          <span class="icon is-small is-left">
-            <i class="fas fa-key"></i>
-          </span>
+      <section id="navbarMenu" class="navbar-menu">
+        <section class="navbar-end">
+          <a class="navbar-item" href="/login">
+            <p id='nav-logo'>Login</p>
+          </a>
+          <a class="navbar-item" href="/register">
+            <p id='nav-logo'>Sign Up</p>
+          </a>
         </section>
       </section>
+    </section>
+  </nav>
+  <!-- END NAV -->
 
-      <section class="field is-grouped">
-        <section class="control">
-          <button id="submit" class="button is-link">Submit</button>
-        </section>
+  <section class="section">
+    <section class="container">
+      <section class="columns is-centered">
+        <main>
+          <form id="loginForm" action="/login" method="post">
+            <h1>Log into your account!</h1>
+            <br>
 
-        <section class="control">
-          <button class="button is-link is-light">Cancel</button>
-        </section>
+            <section class="field">
+              <label for="email" class="label">Email</label>
+              <section class="control has-icons-left has-icons-right">
+                <input id="email" class="input" type="email" placeholder="Email input" name="Email">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </section>
+            </section>
+
+            <section class="field">
+              <label for="password" class="label">Password</label>
+              <section class="control has-icons-left has-icons-right">
+                <input id="password" class="input" type="password" name="password" placeholder="*****">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-key"></i>
+                </span>
+              </section>
+            </section>
+
+            <section class="control">
+              <a href="/login">Don't have an account? Sign up here.</a>
+            </section>
+            <br>
+
+            <section class="field is-grouped">
+              <section class="control">
+                <button id="submit" class="button is-link">Submit</button>
+              </section>
+
+              <section class="control">
+                <button class="button is-link is-light">Cancel</button>
+              </section>
+            </section>
+          </form>
+        </main>
       </section>
-    </form>
+    </section>
+  </section>
 
-
-  </main>
-
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </body>
 
 </html>

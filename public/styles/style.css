@@ -1,18 +1,22 @@
+/* landing */
+#landingBanner {
+  background-image: url('/images/common_banner.jpg') !important;
+  background-position: center bottom;
+  background-color: #d4e2ef;
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+
+#landingBannerTitle {
+  vertical-align: text-top;
+  padding-bottom: 100px;
+}
+
 /* login and register html */
-form .field {
-	max-width: 800px;
-}
-
-body{
-  display: flex;
-  justify-content: center;
+form{
+  padding-top: 60px;
   align-items: center;
-  text-align: center;
-
-}
-/* create event html */
-#creatEventBody {
-  padding: 20px;
+  text-align:center;
 }
 
 /* home.html */
@@ -25,8 +29,11 @@ body{
 }
 
 .card {
-    max-width: 60%;
+  max-width: 60%;
 }
-.rsvp {
-    /* background-color: #42cfb0; */
+
+
+/* create event html */
+#creatEventBody {
+  padding: 20px;
 }

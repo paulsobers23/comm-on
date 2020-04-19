@@ -5,14 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome to CoffeeChats</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <!-- Bulma Version 0.8.x-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
-  <link rel="stylesheet" type="text/css" href="../css/blog.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Welcome to COMM ON</title>
 </head>
 
 <body>
@@ -33,15 +28,6 @@
 
       <section id="navbarMenu" class="navbar-menu">
         <section class="navbar-end">
-          <a class="navbar-item" href="/home">
-            <p id='nav-logo'>Events</p>
-          </a>
-          <a class="navbar-item" href="/events">
-            <p id='nav-logo'>My Events</p>
-          </a>
-          <a class="navbar-item" href="/">
-            <p id='nav-logo'>My RSVPs</p>
-          </a>
           <a class="navbar-item" href="/login">
             <p id='nav-logo'>Login</p>
           </a>
@@ -54,43 +40,37 @@
   </nav>
   <!-- END NAV -->
 
+  <!-- landing Banner -->
   <section class="hero is-info is-medium is-bold">
-    <section class="hero-body">
+    <section class="hero-body" id="landingBanner">
       <section class="container has-text-centered">
-        <h1 class="title">COMM ON</h1>
+        <h1 class="title" id="landingBannerTitle">COMM ON</h1>
       </section>
     </section>
   </section>
 
-
-  <section class="container">
-    <section class="articles">
-      <section class="column is-8 is-offset-2">
-        <section class="card article">
+  <section class="section">
+    <section class="container">
+      <section class="columns is-centered">
+        <section class="column">
           <section class="card-content">
             <section class="media">
               <section class="media-content has-text-centered">
-                <p class="title article-title">Introducing a COMM ON, an app to host community events.</p>
+                <p class="title ">Introducing COMM ON, an app to host community events.</p>
               </section>
             </section>
-            <section class="content article-body">
+            <section class="content has-text-centered">
               <p>COMM ON can help you bring a community together host an event where and when ever you'd like. </p>
 
-              <h3 class="has-text-centered">How can i attend an event?</h3>
-              <p>Browse through our many events and RSVP!</p>
+              <h3>How can i attend an event?</h3>
+              <p>Sign up to browse through our many events and RSVP!</p>
             </section>
           </section>
         </section>
       </section>
-      <script async type="text/javascript" src="../js/bulma.js"></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          //The first argument are the elements to which the plugin shall be initialized
-          //The second argument has to be at least a empty object or a object with your desired options
-          OverlayScrollbars(document.querySelectorAll("body"), {});
-        });
-      </script>
+    </section>
+  </section>
+
 </body>
 
 </html>
