@@ -13,15 +13,10 @@
 }
 
 /* login and register html */
-form .field {
-  max-width: 800px;
-}
-
-body {
-  display: flex;
-  justify-content: center;
+form{
+  padding-top: 60px;
   align-items: center;
-  text-align: center;
+  text-align:center;
 }
 
 /* home.html */
@@ -37,9 +32,6 @@ body {
   max-width: 60%;
 }
 
-.rsvp {
-  /* background-color: #42cfb0; */
-}
 
 /* create event html */
 #creatEventBody {
