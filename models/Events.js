@@ -11,7 +11,7 @@ class Events {
     dateTime,
     type,
   ) {
-    const queryText = `INSERT INTO events (creator, date_created, title, description, purpose, location, date_time, type)
+    const queryText = `INSERT INTO events (creator,date_created, title, description, purpose, location, date_time, type)
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *; `;
     return db.query(queryText, [
       creator,

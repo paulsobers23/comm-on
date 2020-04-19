@@ -16,7 +16,7 @@ const requestMethod = (method, url, data) => fetch(url, {
 //still working on
 const form = document.getElementById('createEvent');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async(e) => {
   e.preventDefault();
   const title = form.title.value;
   const dateCreated = form.dateCreated.value;
@@ -24,7 +24,16 @@ form.addEventListener('submit', (e) => {
   const location = form.location.value;
   const description = form.description.value;
   const type = form.type.value;
+  console.log(dateCreated,title, description, purpose, location,type)
+  
+  const request = await requestMethod('GET', '/events');
+  const data = await request.json();
+  console.log(data)
+  const creatorId = data.creator
+  
+  console.log(creatorId)
+  
   const response = requestMethod('POST', '/events',
-  {dateCreated,title, description, purpose, location,type});
+  {creatorId,dateCreated,title, description, purpose, location,type});
   window.location.href = '/home';
 });
