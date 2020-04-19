@@ -47,7 +47,7 @@ const login = async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.send(err);
-  };
+  }
 };
 
 
@@ -63,16 +63,16 @@ const authenticate = async (req, res, next) => {
     if (!user) {
       return res.status(401).send('Unauthorized User');
     }
-    
+
     req.userId = user.user_id;
     req.user = user;
-    
-    const isVaildPassword = await bcrypt.compare(password, user.password)
+
+    const isVaildPassword = await bcrypt.compare(password, user.password);
 
     if (isVaildPassword) {
       return next();
     }
-    return res.status(403).send('Unauthorized User')
+    return res.status(403).send('Unauthorized User');
   } catch (err) {
     console.log(err);
     return res.send(err);
@@ -92,21 +92,21 @@ const registerForm = (req, res) => {
   res.sendFile(path.join(__dirname, '../views', 'register.html'));
 };
 
-const homePage = (req,res) => {
+const homePage = (req, res) => {
   res.sendFile(path.join(__dirname, '../views', 'home.html'));
 };
 
-const createForm = (req,res) => {
+const createForm = (req, res) => {
   res.sendFile(path.join(__dirname, '../views', 'createEvent.html'));
 };
 
-const updateForm = (req,res) => {
+const updateForm = (req, res) => {
   res.sendFile(path.join(__dirname, '../views', 'updateEvent.html'));
 };
 
-const landingPage = (req,res) =>{
+const landingPage = (req, res) => {
   res.sendFile(path.join(__dirname, '../views', 'landing.html'));
-}
+};
 module.exports = {
   login,
   logout,

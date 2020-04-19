@@ -12,7 +12,7 @@ const create = (req, res) => {
     dateTime,
     type,
   } = req.body;
-  Events.create(creator,dateCreated, title, description, purpose, location, dateTime, type)
+  Events.create(creator, dateCreated, title, description, purpose, location, dateTime, type)
     .then((data) => {
       console.log(data.rows);
       return res.status(201).json(data.rows);

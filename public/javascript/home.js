@@ -14,11 +14,11 @@ const requestMethod = (method, url, data) => fetch(url, {
 });
 
 const getEvents = async () => {
-  const response = await requestMethod('GET', '/events')
+  const response = await requestMethod('GET', '/events');
   const data = await response.json();
-  const events = data.forEach((event) =>{
-  const section =  document.getElementById('eventsSection');
-  section.innerHTML += `
+  const events = data.forEach((event) => {
+    const section = document.getElementById('eventsSection');
+    section.innerHTML += `
           <section class="card">
         <header class="card-header">
           <p class="card-header-title">
@@ -43,15 +43,15 @@ const getEvents = async () => {
         </footer>
       </section>`;
   });
-  return events
-}
+  return events;
+};
 
 // i left off on update not completed
 const updateEvent = (id) => {
   const button = document.getElementById('updateEvent');
-  button.addEventListener('click', () =>{
-    window.location.href = '/updateEvent' ;
-    form.addEventListener('submit', async(e) => {
+  button.addEventListener('click', () => {
+    window.location.href = '/updateEvent';
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const title = form.title.value;
       const date_time = form.date_time.value;
@@ -59,27 +59,25 @@ const updateEvent = (id) => {
       const location = form.location.value;
       const description = form.description.value;
       const type = form.type.value;
-      
+
       const request = await requestMethod('GET', '/events');
       const data = await request.json();
       console.log(data);
       const creatorId = data.creator;
       console.log(creatorId);
-      
+
       // const response = requestMethod('POST', '/events/:id',
       // {creatorId,dateCreated,title, description, purpose, location,type});
       // window.location.href = '/home';
-      
     });
-  })
-  
-}
+  });
+};
 
 const removeEvent = (id) => {
   const response = requestMethod('DELETE', `/events/${id}`);
   window.location.reload();
 };
 
-window.addEventListener('load', () =>{
-  getEvents()
-})
+window.addEventListener('load', () => {
+  getEvents();
+});
