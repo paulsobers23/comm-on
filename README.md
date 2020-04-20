@@ -23,7 +23,10 @@ A full-stack web application allowing the user to register and log in. Being abl
 *   Users will be able to RSVP events.
 *   Users will be able to search event by location/purpose.
 
+**Deployed [here](https://shielded-gorge-53711.herokuapp.com/)**
+
 **Table Definitions**
+
 ```sql
 create database network;
 CREATE TABLE users (
@@ -50,5 +53,3 @@ CREATE TABLE rsvp (
   user_id INT REFERENCES users(id)
 );
 ```
-
-- [Application deployed here](www.google.com)
