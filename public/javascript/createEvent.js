@@ -25,21 +25,10 @@ form.addEventListener('submit', async (e) => {
   const type = form.type.value;
   const dateCreated = new Date();
 
-  console.log(
-    dateCreated,
-    dateTime,
-    title,
-    description,
-    purpose,
-    location,
-    type,
-  );
   const request = await requestMethod('GET', '/events');
   const data = await request.json();
-  console.log(data);
-  const { creator } = data;
+  const { creator } = data[0];
 
-  console.log(creator);
   const response = requestMethod('POST', '/events', {
     creator,
     dateCreated,
