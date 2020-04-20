@@ -13,7 +13,7 @@
 }
 
 /* login and register html */
-form{
+#loginForm , #registerForm{
   padding-top: 60px;
   align-items: center;
   text-align:center;
@@ -21,17 +21,16 @@ form{
 
 /* home.html */
 #cardsBody {
-  /* padding: 50px; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
-  /* max-width: 400px; */
   width: 400px !important;
+}
+#eventTitles{
+  font-size:25px;
 }
 
 
 /* create event html */
-#creatEventBody {
-  padding: 20px;
+#createEventForm, #updateEventForm{
+  align-items: center;
+  text-align:center;
+  width:200px;
 }
