@@ -33,7 +33,8 @@ const getEvents = async () => {
           </p>
           <br>
           <time id="eventTime" class="card-header-title is-centered" datetime="2016-1-1">
-            ${new Date(event.date_time)}
+            <p>Date Time: ${new Date(event.date_time)}</p>\n
+            <p>Date created: ${event.date_created}</p>
           </time>
         </section>
       </section>
@@ -64,21 +65,18 @@ const updateEvent = id => {
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const title = form.title.value;
-      const date_time = form.date_time.value;
+      const dateTime = form.date_time.value;
       const purpose = form.purpose.value;
       const location = form.location.value;
       const description = form.description.value;
       const type = form.type.value;
 
-      const request = await requestMethod('GET', '/events');
-      const data = await request.json();
-      console.log(data);
-      const creatorId = data.creator;
-      console.log(creatorId);
+      
+      console.log(title, description, purpose, location, dateTime, type);
 
-      // const response = requestMethod('POST', '/events/:id',
-      // {creatorId,dateCreated,title, description, purpose, location,type});
-      // window.location.href = '/home';
+      const response = requestMethod('POST', '/events/:id',
+      {title, description, purpose, location,dateTime, type});
+      window.location.href = '/home';
     });
   });
 };
