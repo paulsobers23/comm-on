@@ -13,7 +13,7 @@ const requestMethod = (method, url, data) => fetch(url, {
   return response;
 });
 
-const form = document.getElementById('createEvent');
+const form = document.getElementById('createEventForm');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -25,12 +25,13 @@ form.addEventListener('submit', async (e) => {
   const type = form.type.value;
   const dateCreated = new Date();
 
-  const request = await requestMethod('GET', '/events');
-  const data = await request.json();
-  const { creator } = data[0];
+  // const request = await fetch('/events');
+  // const data = await request.json();
+  // const { creator } = await data[0];
+  // console.log(data)
 
   const response = requestMethod('POST', '/events', {
-    creator,
+    // creator,
     dateCreated,
     title,
     description,

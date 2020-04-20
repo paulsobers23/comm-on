@@ -62,7 +62,7 @@ const updateEvent = id => {
   const button = document.getElementById('updateEvent');
   button.addEventListener('click', () => {
     window.location.href = '/updateEvent';
-    form.addEventListener('submit', async e => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const title = form.title.value;
       const dateTime = form.date_time.value;
