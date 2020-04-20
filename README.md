@@ -9,16 +9,20 @@ A full-stack web application allowing the user to register and log in. Being abl
  - [cookie-parser](https://github.com/expressjs/cookie-parser#readme)
  - [bcrypt](https://github.com/kelektiv/node.bcrypt.js#usage)
  - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#readme)
- Database - [nodepostgres](https://node-postgres.com/features/pooling)
- Deploment - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
+ -Database - [nodepostgres](https://node-postgres.com/features/pooling)
+
+ -Deploment - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
 
 **Features**
-* MVP :
+* MVP:
 *   Users will be able to create an account and log in
 *   Users will be able to create/update/delete an event
-* Future :
+* Future:
 *   Users will be able to see other users events
 *   Users will be able to RSVP events
+
+**Deployed [here]()**
+
 
 Table Definitions
 ```sql
