@@ -47,60 +47,68 @@
     </section>
   </nav>
   <!-- END NAV -->
-  
-  <main>
-    <form id="updateEventForm" action="#" method="#">
-      <fieldset>
-        <label class="label" for="title">Event Title</label>
-        <input id="title" class="input" type="text" placeholder="Title" name="title">
-        <label class="label" for="date">Event Date</label>
-        <input type="datetime-local" id="date" name="date_time" value="2020-04-15" min="2020-04-15" max="2025-12-31">
-        
-        <label class="label" for="purpose">Purpose of Event</label>
-        <section class="control">
-          <section id="purpose" class="select">
-            <select name="purpose" >
-              <option>Art</option>
-              <option>Community Service</option>
-              <option>Education</option>
-              <option>Entertainment</option>
-              <option>Food</option>
-              <option>Music</option>
-              <option>Tech</option>
-              <option>Other</option>
+  <section class="section">
+    <section class="container">
+      <section class="columns is-centered">
+        <main>
+          <form id="updateEventForm" action="#" method="#">
+            <fieldset>
+              <label class="label" for="title">Event Title</label>
+              <input id="title" class="input" type="text" placeholder="Title" name="title">
+              <label class="label" for="date">Event Date</label>
+              <input type="date" id="date" name="date_time" value="2020-04-15" min="2020-04-15" max="2025-12-31">
 
-            </select>
-          </section>
-        </section>
+              <label class="label" for="purpose">Purpose of Event</label>
+              <section class="control">
+                <section id="purpose" class="select">
+                  <select name="purpose" >
+                    <option>Art</option>
+                    <option>Community Service</option>
+                    <option>Education</option>
+                    <option>Entertainment</option>
+                    <option>Food</option>
+                    <option>Music</option>
+                    <option>Tech</option>
+                    <option>Other</option>
 
-        <section class="field">
-          <label class="label" for="location">Location</label>
-          <section class="control">
-            <input id="location" name="location" type="text" placeholder="Location" class="input">
-          </section>
-        </section>
+                  </select>
+                </section>
+              </section>
 
-        <label class="label" for="description">Event Description</label>
-        <section class="control">
+              <section class="field">
+                <label class="label" for="location">Location</label>
+                <section class="control">
+                  <input id="location" name="location" type="text" placeholder="Location" class="input">
+                </section>
+              </section>
 
-          <textarea id="description" name="description" class="textarea" placeholder="Describe what the purpose of your event is!"></textarea>
-        </section>
+              <label class="label" for="description">Event Description</label>
+              <section class="control">
 
-        <label class="label" for="type">Event Type</label>
-        <section class="control">
-          <section id="type" class="select">
-            <select name="type">
-              <option>In Person</option>
-              <option>Remote/Virtual</option>
-            </select>
-          </section>
-        </section>
+                <textarea id="description" name="description" class="textarea" placeholder="Describe what the purpose of your event is!"></textarea>
+              </section>
 
-      </fieldset>
+              <label class="label" for="type">Event Type</label>
+              <section class="control">
+                <section id="type" class="select">
+                  <select name="type">
+                    <option>In Person</option>
+                    <option>Remote/Virtual</option>
+                  </select>
+                </section>
+              </section>
 
-      <input class="button is-link is-light" type="submit" value="Submit Event" />
-    </form>
-  </main>
+            </fieldset>
+
+            <input class="button is-link is-light" type="submit" value="Submit Event" />
+          </form>
+        </main>
+      </section>
+    </section>
+  </section>
+
+
+
   <script src="./javascript/home.js" charset="utf-8"></script>
 </body>
 
