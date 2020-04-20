@@ -4,7 +4,7 @@
   "description": "The goal of this app is to allow two users to create accounts in categories and schedule coffee zoom chats and maybe more in the future",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
