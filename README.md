@@ -1,4 +1,6 @@
-# comm-on
+# COMM ON
+
+## General info
 A full-stack web application allowing the user to register and log in. Being able to create events, we encourage users to host events online or in-person (of course when this pandemic is over)  to create community connections
 
 **Technologies**
@@ -10,21 +12,21 @@ A full-stack web application allowing the user to register and log in. Being abl
  - [bcrypt](https://github.com/kelektiv/node.bcrypt.js#usage)
  - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#readme)
  - [nodepostgres](https://node-postgres.com/features/pooling)
-
- -Deploment - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
+ - Deploment - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
 
 **Features**
 * MVP:
 *   Users will be able to create an account and log in
-*   Users will be able to create/update/delete an event
+*   Users will be able to create/delete an event.
 * Future:
 *   Users will be able to see other users events
-*   Users will be able to RSVP events
+*   Users will be able to RSVP events.
+*   Users will be able to search event by location/purpose.
 
 **Deployed [here]()**
 
 
-Table Definitions
+**Table Definitions**
 ```sql
 create database network;
 CREATE TABLE users (
