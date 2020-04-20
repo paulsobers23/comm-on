@@ -49,17 +49,17 @@
   <!-- END NAV -->
   
   <main>
-    <form id="updateEventForm" action="events" method="PUT">
+    <form id="updateEventForm" action="#" method="#">
       <fieldset>
         <label class="label" for="title">Event Title</label>
         <input id="title" class="input" type="text" placeholder="Title" name="title">
         <label class="label" for="date">Event Date</label>
-        <input type="date" id="date" name="dateCreated" value="2020-04-15" min="2020-04-15" max="2025-12-31">
+        <input type="date" id="date" name="date_time" value="2020-04-15" min="2020-04-15" max="2025-12-31">
         
         <label class="label" for="purpose">Purpose of Event</label>
         <section class="control">
-          <section id="purpose" name="purpose" class="select">
-            <select>
+          <section id="purpose" class="select">
+            <select name="purpose" >
               <option>Art</option>
               <option>Community Service</option>
               <option>Education</option>
@@ -88,8 +88,8 @@
 
         <label class="label" for="type">Event Type</label>
         <section class="control">
-          <section id="type" name="type" class="select">
-            <select>
+          <section id="type" class="select">
+            <select name="type">
               <option>In Person</option>
               <option>Remote/Virtual</option>
             </select>
@@ -101,7 +101,7 @@
       <input class="button is-link is-light" type="submit" value="Submit Event" />
     </form>
   </main>
-  <script src="javascript/updateEvent.js" charset="utf-8"></script>
+  <script src="./javascript/home.js" charset="utf-8"></script>
 </body>
 
 </html>
