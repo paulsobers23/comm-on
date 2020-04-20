@@ -31,6 +31,8 @@ const getEvents = async () => {
           <p id="eventDescription" class="subtitle has-text-centered">
             ${event.description}
           </p>
+          <p>${event.location}</p>
+          <p>${event.type}</p>
           <br>
           <time id="eventTime" class="card-header-title is-centered" datetime="2016-1-1">
             <p>Date Time: ${new Date(event.date_time)}</p>\n
