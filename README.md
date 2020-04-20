@@ -1,23 +1,21 @@
 # comm-on
-A full stack web application allowing apiring/junior level software engineers to connect with high level engineers in a world where everything is virtual.
+A full-stack web application allowing the user to register and log in. Being able to create events, we encourage users to host events online or in-person (of course when this pandemic is over)  to create community connections
 
-## Table of contents
-* [General info](#general-info)
-* [Technologies](#technologies)
-* - NodeJs
-* - Express
-* - ESLint
-* - body-parser
-* - cookie-parser
-* - bcrypt
-* - jsonwebtoken
-* Database - nodepostgres
-* Deploment - Heroku
-* [Features](#features)
+**Technologies**
+ - NodeJs
+ - [Express](http://expressjs.com/)
+ - [ESLint](https://github.com/eslint/eslint)
+ - [body-parser](https://github.com/expressjs/body-parser)
+ - [cookie-parser](https://github.com/expressjs/cookie-parser#readme)
+ - [bcrypt](https://github.com/kelektiv/node.bcrypt.js#usage)
+ - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#readme)
+ Database - [nodepostgres](https://node-postgres.com/features/pooling)
+ Deploment - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
+
+**Features**
 * MVP :
 *   Users will be able to create an account and log in
 *   Users will be able to create/update/delete an event
-*
 * Future :
 *   Users will be able to see other users events
 *   Users will be able to RSVP events
