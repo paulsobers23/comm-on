@@ -33,14 +33,14 @@ form.addEventListener('submit', async (e) => {
   const { creator } = data;
 
   console.log(creator);
-  // const response = requestMethod('POST', '/events',
-  // {creator,
-  //   date_created,
-  //   title,
-  //   description,
-  //   purpose,
-  //   location,
-  //   date_time,
-  //   type});
-  // window.location.href = '/home';
+  const response = requestMethod('POST', '/events',
+  {creator,
+    date_created,
+    title,
+    description,
+    purpose,
+    location,
+    date_time,
+    type});
+  window.location.href = '/home';
 });
