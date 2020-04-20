@@ -2,14 +2,14 @@
 A full-stack web application allowing the user to register and log in. Being able to create events, we encourage users to host events online or in-person (of course when this pandemic is over)  to create community connections
 
 **Technologies**
- - NodeJs
+ - [NodeJs](https://nodejs.org/en/)
  - [Express](http://expressjs.com/)
  - [ESLint](https://github.com/eslint/eslint)
  - [body-parser](https://github.com/expressjs/body-parser)
  - [cookie-parser](https://github.com/expressjs/cookie-parser#readme)
  - [bcrypt](https://github.com/kelektiv/node.bcrypt.js#usage)
  - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#readme)
- -Database - [nodepostgres](https://node-postgres.com/features/pooling)
+ - [nodepostgres](https://node-postgres.com/features/pooling)
 
  -Deploment - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true)
 
