@@ -80,7 +80,7 @@ const authenticate = async (req, res, next) => {
 };
 
 const logout = (req, res) => {
-  req.clearCookie('userToken');
+  res.clearCookie('userToken');
   res.redirect('/login');
 };
 

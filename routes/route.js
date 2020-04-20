@@ -8,6 +8,7 @@ const router = express.Router();
 
 router.use(cookieParser());
 
+router.get('/', userController.landingPage);
 router.get('/register', userController.registerForm);
 
 router.post('/register', userController.register);
@@ -18,8 +19,7 @@ router.post('/login', userController.login);
 
 router.use(userController.authenticate);
 
-router.get('/', userController.landingPage);
-
+router.get('/logout', userController.logout);
 router.get('/home', userController.homePage);
 router.get('/createEvent', userController.createForm);
 router.get('/updateEvent', userController.updateForm);
