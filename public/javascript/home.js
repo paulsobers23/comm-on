@@ -58,7 +58,7 @@ const getEvents = async () => {
 };
 
 // i left off on update not completed
-const updateEvent = id => {
+const updateEvent = (id) => {
   const button = document.getElementById('updateEvent');
   button.addEventListener('click', () => {
     window.location.href = '/updateEvent';
@@ -70,18 +70,16 @@ const updateEvent = id => {
       const location = form.location.value;
       const description = form.description.value;
       const type = form.type.value;
-
-      
       console.log(title, description, purpose, location, dateTime, type);
 
-      const response = requestMethod('POST', '/events/:id',
+      const response = await requestMethod('POST', '/events/:id',
       {title, description, purpose, location,dateTime, type});
       window.location.href = '/home';
     });
   });
 };
 
-const removeEvent = id => {
+const removeEvent = (id) => {
   const response = requestMethod('DELETE', `/events/${id}`);
   window.location.reload();
 };
