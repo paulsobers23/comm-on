@@ -20,16 +20,14 @@ form{
 }
 
 /* home.html */
-#homeBody {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.card {
-  max-width: 60%;
+#cardsBody {
+  /* padding: 50px; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+  /* max-width: 400px; */
+  width: 400px !important;
 }
 
 
