@@ -30,17 +30,17 @@ form.addEventListener('submit', async (e) => {
   const request = await requestMethod('GET', '/events');
   const data = await request.json();
   console.log(data);
-  const { creator } = data;
+  const { creator } = data.creator;
 
   console.log(creator);
-  // const response = requestMethod('POST', '/events',
-  // {creator,
-  //   date_created,
-  //   title,
-  //   description,
-  //   purpose,
-  //   location,
-  //   date_time,
-  //   type});
-  // window.location.href = '/home';
+  const response = requestMethod('POST', '/events',
+  {creator,
+    date_created,
+    title,
+    description,
+    purpose,
+    location,
+    date_time,
+    type});
+  window.location.href = '/home';
 });
